@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polynesia</title>
+    <meta
+      name="description"
+      content="Hub các blog theo quốc gia/đảo thuộc vùng Polynesia (Hawaii, New Zealand, Samoa, ...)"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <!-- Title + Description -->
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__inner">
+          <p class="hero__kicker">Custom Page</p>
+          <h1 id="page-title" class="hero__title">Polynesia</h1>
+          <p class="hero__desc">
+            Hub tổng hợp các Blog theo từng quốc gia/đảo thuộc vùng Polynesia.
+            Chọn một mục bên dưới để truy cập category tương ứng.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sections container (each section = 1 blog category) -->
+      <section class="content" aria-label="Danh sách Blog Categories">
+        <div id="blogs" class="grid" role="list"></div>
+
+        <noscript>
+          <div class="noscript">
+            Vui lòng bật JavaScript để hiển thị danh sách blog categories.
+          </div>
+        </noscript>
+      </section>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
