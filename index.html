@@ -14,66 +14,90 @@
     <header class="hero" role="banner" aria-label="Banner Polynesia"
             style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop')">
         <div class="hero-overlay" aria-hidden="true"></div>
+
         <div class="container hero-inner">
-            <h1>Polynesia</h1>
-            <p class="intro-text">
-                Vùng tam giác bí ẩn và quyến rũ giữa Thái Bình Dương. 
-                Nơi hội tụ của những nền văn hóa hải đảo lâu đời, từ ngọn lửa Hawaii 
-                đến sự hùng vĩ của Aotearoa (New Zealand).
-            </p>
+            <h1 class="hero-title">Polynesia</h1>
+
+            <!-- Prominent description with background for readability -->
+            <div class="hero-caption" aria-hidden="false">
+                <p>
+                    Vùng tam giác bí ẩn và quyến rũ giữa Thái Bình Dương — nơi hội tụ của những nền văn hóa hải đảo lâu đời,
+                    từ ngọn lửa Hawaii đến sự hùng vĩ của Aotearoa (New Zealand). Khám phá bãi biển, văn hóa và hành trình trải nghiệm.
+                </p>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <!-- Page-hub cards with background images -->
-        <article class="destination-card" id="hawaii">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542259659-4ab2877c2401?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Bãi biển hoàng hôn tại Hawaii với hàng dừa"></div>
-            <div class="card-content">
-                <h2>Hawaii</h2>
-                <p>
-                    Thiên đường nhiệt đới với những ngọn núi lửa đang hoạt động và văn hóa Aloha nồng hậu. 
-                    Khám phá Oahu, Maui và Big Island với những bãi biển lướt sóng đẳng cấp thế giới.
-                </p>
-                <a href="/blog/hawaii" class="btn-link" aria-label="Đọc blog về du lịch Hawaii">Khám phá Hawaii</a>
-            </div>
-        </article>
+        <!-- Site intro / quote -->
+        <section class="site-intro" aria-label="Giới thiệu trang">
+            <blockquote class="site-quote">
+                "Đảo là lời mời — mỗi bờ biển kể một câu chuyện. Hãy lắng nghe và khám phá."
+            </blockquote>
+            <p class="lead">
+                Dưới đây là các hub trang cho từng điểm đến ở Polynesia. Chọn một điểm đến để đọc bài hướng dẫn, mẹo du lịch và gợi ý hành trình.
+            </p>
+        </section>
 
-        <article class="destination-card reverse" id="new-zealand">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1469521669194-babb45f835ae?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Phong cảnh núi non hùng vĩ tại New Zealand"></div>
-            <div class="card-content">
-                <h2>New Zealand (Aotearoa)</h2>
-                <p>
-                    Vùng đất của những đám mây trắng dài. Nơi giao thoa giữa văn hóa Maori cổ xưa 
-                    và thiên nhiên hùng vĩ. Trải nghiệm trekking, hồ băng và những thảo nguyên xanh ngát.
-                </p>
-                <a href="/blog/new-zealand" class="btn-link" aria-label="Đọc blog về du lịch New Zealand">Khám phá New Zealand</a>
-            </div>
-        </article>
+        <!-- Grid wrapper so we can dim non-hovered cards when one is hovered -->
+        <section class="hub-grid" aria-label="Danh sách điểm đến">
+            <!-- Hawaii -->
+            <article class="destination-card" id="hawaii">
+                <div class="card-image"
+                     style="background-image: url('https://images.unsplash.com/photo-1542259659-4ab2877c2401?q=80&w=1600&auto=format&fit=crop');"
+                     role="img" aria-label="Bãi biển hoàng hôn tại Hawaii với hàng dừa">
+                    <!-- fallback image for previews that don't render background-image -->
+                    <img class="bg-fallback" src="https://images.unsplash.com/photo-1542259659-4ab2877c2401?q=80&w=1200&auto=format&fit=crop" alt="Bãi biển hoàng hôn tại Hawaii" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h2>Hawaii</h2>
+                    <p>Thiên đường nhiệt đới với núi lửa, lướt sóng và văn hóa Aloha ấm áp. Khám phá Oahu, Maui và Big Island.</p>
+                    <a href="/blog/hawaii" class="btn-link" aria-label="Explore Hawaii">Explore Hawaii</a>
+                </div>
+            </article>
 
-        <article class="destination-card" id="samoa">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1596323086961-419b6e87a270?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Hồ bơi tự nhiên To Sua Ocean Trench tại Samoa"></div>
-            <div class="card-content">
-                <h2>Samoa</h2>
-                <p>
-                    Trái tim của Polynesia. Nơi gìn giữ lối sống Fa'a Samoa truyền thống. 
-                    Tắm mình trong những hồ bơi tự nhiên To Sua và thác nước hoang sơ.
-                </p>
-                <a href="/blog/samoa" class="btn-link" aria-label="Đọc blog về du lịch Samoa">Khám phá Samoa</a>
-            </div>
-        </article>
+            <!-- New Zealand -->
+            <article class="destination-card reverse" id="new-zealand">
+                <div class="card-image"
+                     style="background-image: url('https://images.unsplash.com/photo-1469521669194-babb45f835ae?q=80&w=1600&auto=format&fit=crop');"
+                     role="img" aria-label="Phong cảnh núi non hùng vĩ tại New Zealand">
+                    <img class="bg-fallback" src="https://images.unsplash.com/photo-1469521669194-babb45f835ae?q=80&w=1200&auto=format&fit=crop" alt="Phong cảnh New Zealand" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h2>New Zealand (Aotearoa)</h2>
+                    <p>Vùng đất của cảnh quan hùng vĩ và văn hóa Maori. Tuyệt vời cho trekking, hồ băng và trải nghiệm tự nhiên.</p>
+                    <a href="/blog/new-zealand" class="btn-link" aria-label="Explore New Zealand">Explore New Zealand</a>
+                </div>
+            </article>
 
-        <article class="destination-card reverse" id="tahiti">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1532966527582-730ce972627e?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Resort trên mặt nước tại Bora Bora"></div>
-            <div class="card-content">
-                <h2>French Polynesia (Tahiti)</h2>
-                <p>
-                    Bora Bora và Tahiti - biểu tượng của sự xa hoa và lãng mạn. 
-                    Những bungalow trên mặt nước trong xanh như ngọc bích đang chờ đón bạn.
-                </p>
-                <a href="/blog/tahiti" class="btn-link" aria-label="Đọc blog về du lịch Tahiti">Khám phá Tahiti</a>
-            </div>
-        </article>
+            <!-- Samoa -->
+            <article class="destination-card" id="samoa">
+                <div class="card-image"
+                     style="background-image: url('https://images.unsplash.com/photo-1596323086961-419b6e87a270?q=80&w=1600&auto=format&fit=crop');"
+                     role="img" aria-label="Hồ bơi tự nhiên To Sua Ocean Trench tại Samoa">
+                    <img class="bg-fallback" src="https://images.unsplash.com/photo-1596323086961-419b6e87a270?q=80&w=1200&auto=format&fit=crop" alt="To Sua Ocean Trench, Samoa" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h2>Samoa</h2>
+                    <p>Trái tim của Polynesia với lối sống Fa'a Samoa truyền thống, hồ tự nhiên và thác nước hoang sơ.</p>
+                    <a href="/blog/samoa" class="btn-link" aria-label="Explore Samoa">Explore Samoa</a>
+                </div>
+            </article>
 
+            <!-- Tahiti / French Polynesia -->
+            <article class="destination-card reverse" id="tahiti">
+                <div class="card-image"
+                     style="background-image: url('https://images.unsplash.com/photo-1532966527582-730ce972627e?q=80&w=1600&auto=format&fit=crop');"
+                     role="img" aria-label="Resort trên mặt nước tại Bora Bora">
+                    <img class="bg-fallback" src="https://images.unsplash.com/photo-1532966527582-730ce972627e?q=80&w=1200&auto=format&fit=crop" alt="Bora Bora resort" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h2>French Polynesia (Tahiti)</h2>
+                    <p>Bora Bora và Tahiti — bungalow trên mặt nước, nước biển trong xanh và trải nghiệm lãng mạn.</p>
+                    <a href="/blog/tahiti" class="btn-link" aria-label="Explore Tahiti">Explore Tahiti</a>
+                </div>
+            </article>
+        </section>
     </main>
 
     <script src="script.js"></script>
