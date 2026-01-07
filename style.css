@@ -23,43 +23,73 @@ body {
     padding-bottom: 4rem;
 }
 
+/* Utility for accessible hidden text */
+.sr-only {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* Hero / Banner */
+.hero {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    margin-bottom: 2rem;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));
+    z-index: 0;
+}
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 3rem var(--spacing-unit);
+}
+.hero h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+.hero .intro-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.95);
+}
+
+/* Container */
 .container {
     max-width: 1000px; /* Độ rộng tối ưu cho mắt đọc (readability) */
     margin: 0 auto;
     padding: 0 var(--spacing-unit);
 }
 
-/* Header Styles */
-.page-header {
-    text-align: center;
-    padding: 4rem 0 3rem;
-    animation: fadeIn 0.8s ease-out;
-}
-
-.page-header h1 {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-.intro-text {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #555;
-}
-
-/* Card Styles - Zig Zag Layout */
+/* Card Styles - Background image + content panel */
 .destination-card {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    background: var(--card-bg);
-    margin-bottom: 3rem;
+    gap: 0;
+    background: transparent;
+    margin-bottom: 2.5rem;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: relative;
+    box-shadow: 0 4px 12px rgba(15,76,117,0.08);
     opacity: 0; /* JS sẽ xử lý hiển thị */
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -71,41 +101,36 @@ body {
     transform: translateY(0);
 }
 
-.card-image img {
+/* The image is the background of this block */
+.card-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 260px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 3/2; /* Quan trọng để tránh CLS */
-    display: block;
-    transition: transform 0.5s ease;
 }
 
-.destination-card:hover .card-image img {
-    transform: scale(1.05); /* Micro-interaction nhẹ */
-}
-
+/* Content panel that sits next to (or above on mobile) the image */
 .card-content {
     padding: 2rem;
+    background: rgba(255,255,255,0.92);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .card-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
     color: var(--primary-color);
 }
-
 .card-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     color: #444;
 }
-
 .btn-link {
     display: inline-block;
     width: fit-content;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.4rem;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
@@ -113,31 +138,69 @@ body {
     font-weight: 600;
     transition: var(--transition);
 }
-
 .btn-link:hover {
     background-color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(50, 130, 184, 0.3);
 }
 
-/* Desktop styles */
+/* Desktop styles: side-by-side image + content */
 @media (min-width: 768px) {
     .destination-card {
         grid-template-columns: 1fr 1fr;
-        align-items: center;
+        align-items: stretch;
+        gap: 0;
     }
 
-    /* Đảo ngược thứ tự cho section chẵn để tạo layout zig-zag */
-    .destination-card.reverse .card-content {
-        order: 2;
-    }
-    .destination-card.reverse .card-image {
+    /* Default: image left, content right */
+    .destination-card .card-image {
         order: 1;
     }
-    
-    .page-header h1 {
+    .destination-card .card-content {
+        order: 2;
+    }
+
+    /* Đảo ngược cho .reverse để tạo layout zig-zag */
+    .destination-card.reverse .card-content {
+        order: 1;
+    }
+    .destination-card.reverse .card-image {
+        order: 2;
+    }
+
+    .hero h1 {
         font-size: 5rem;
     }
+}
+
+/* Small tweak: rounded corners match visually */
+.destination-card .card-image,
+.destination-card .card-content {
+    border-radius: 12px;
+}
+
+/* Make sure rounded corners apply only to outer corners when side-by-side */
+@media (min-width: 768px) {
+    .destination-card .card-image {
+        border-radius: 12px 0 0 12px;
+    }
+    .destination-card.reverse .card-image {
+        border-radius: 0 12px 12px 0;
+    }
+    .destination-card .card-content {
+        border-radius: 0 12px 12px 0;
+    }
+    .destination-card.reverse .card-content {
+        border-radius: 12px 0 0 12px;
+    }
+}
+
+/* Image hover effect (slight scale) */
+.card-image {
+    transition: transform 0.6s ease;
+}
+.destination-card:hover .card-image {
+    transform: scale(1.03);
 }
 
 @keyframes fadeIn {

@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khám Phá Polynesia: Hawaii, New Zealand, Samoa & Hơn Thế Nữa</title>
-    <meta name="description" content="Hướng dẫn du lịch chi tiết về vùng Polynesia. Khám phá văn hóa, bãi biển và bí ẩn của Hawaii, New Zealand, Samoa, Tahiti và Đảo Phục Sinh.">
+    <meta name="description" content="Hướng dẫn du lịch chi tiết về vùng Polynesia. Khám phá văn hóa, bãi biển và bí ẩn của Hawaii, New Zealand, Samoa, Tahiti và nhiều đảo tuyệt đẹp khác.">
     <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://yourusername.github.io/polynesia" />
+    <link rel="canonical" href="https://mktphuchung-wq.github.io/layoutweb/" />
 </head>
 <body>
 
-    <main class="container">
-        
-        <header class="page-header">
+    <!-- Hero / Banner -->
+    <header class="hero" role="banner" aria-label="Banner Polynesia"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop')">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-inner">
             <h1>Polynesia</h1>
             <p class="intro-text">
                 Vùng tam giác bí ẩn và quyến rũ giữa Thái Bình Dương. 
                 Nơi hội tụ của những nền văn hóa hải đảo lâu đời, từ ngọn lửa Hawaii 
                 đến sự hùng vĩ của Aotearoa (New Zealand).
             </p>
-        </header>
+        </div>
+    </header>
 
+    <main class="container">
+        <!-- Page-hub cards with background images -->
         <article class="destination-card" id="hawaii">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542259659-4ab2877c2401?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Bãi biển hoàng hôn tại Hawaii với hàng dừa"></div>
             <div class="card-content">
                 <h2>Hawaii</h2>
                 <p>
@@ -30,14 +36,10 @@
                 </p>
                 <a href="/blog/hawaii" class="btn-link" aria-label="Đọc blog về du lịch Hawaii">Khám phá Hawaii</a>
             </div>
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1542259659-4ab2877c2401?q=80&w=800&auto=format&fit=crop" 
-                     alt="Bãi biển hoàng hôn tại Hawaii với hàng dừa" 
-                     width="600" height="400" loading="eager"> 
-            </div>
         </article>
 
         <article class="destination-card reverse" id="new-zealand">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1469521669194-babb45f835ae?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Phong cảnh núi non hùng vĩ tại New Zealand"></div>
             <div class="card-content">
                 <h2>New Zealand (Aotearoa)</h2>
                 <p>
@@ -46,14 +48,10 @@
                 </p>
                 <a href="/blog/new-zealand" class="btn-link" aria-label="Đọc blog về du lịch New Zealand">Khám phá New Zealand</a>
             </div>
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1469521669194-babb45f835ae?q=80&w=800&auto=format&fit=crop" 
-                     alt="Phong cảnh núi non hùng vĩ tại New Zealand" 
-                     width="600" height="400" loading="lazy">
-            </div>
         </article>
 
         <article class="destination-card" id="samoa">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1596323086961-419b6e87a270?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Hồ bơi tự nhiên To Sua Ocean Trench tại Samoa"></div>
             <div class="card-content">
                 <h2>Samoa</h2>
                 <p>
@@ -62,14 +60,10 @@
                 </p>
                 <a href="/blog/samoa" class="btn-link" aria-label="Đọc blog về du lịch Samoa">Khám phá Samoa</a>
             </div>
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1596323086961-419b6e87a270?q=80&w=800&auto=format&fit=crop" 
-                     alt="Hồ bơi tự nhiên To Sua Ocean Trench tại Samoa" 
-                     width="600" height="400" loading="lazy">
-            </div>
         </article>
 
         <article class="destination-card reverse" id="tahiti">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1532966527582-730ce972627e?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Resort trên mặt nước tại Bora Bora"></div>
             <div class="card-content">
                 <h2>French Polynesia (Tahiti)</h2>
                 <p>
@@ -77,11 +71,6 @@
                     Những bungalow trên mặt nước trong xanh như ngọc bích đang chờ đón bạn.
                 </p>
                 <a href="/blog/tahiti" class="btn-link" aria-label="Đọc blog về du lịch Tahiti">Khám phá Tahiti</a>
-            </div>
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1532966527582-730ce972627e?q=80&w=800&auto=format&fit=crop" 
-                     alt="Resort trên mặt nước tại Bora Bora" 
-                     width="600" height="400" loading="lazy">
             </div>
         </article>
 
